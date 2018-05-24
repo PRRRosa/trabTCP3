@@ -12,10 +12,6 @@ public class Researcher {
 
 	private SearchTopics[] searchTopics;
 
-	private Affiliation affiliation;
-
-	private SearchTopics[] searchTopics;
-
 	private Article article;
 
 	public Researcher(int id, String name, Affiliation affiliation, SearchTopics searchTopics) {

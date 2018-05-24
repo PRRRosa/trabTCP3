@@ -6,7 +6,7 @@ import command.PeerReviewSystem;
 import domain.Conference;
 import domain.Researcher;
 
-public class SystemOperationsImpl {
+public class SystemOperationsImpl implements SystemOperations{
 
 	private Database database;
 

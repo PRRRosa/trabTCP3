@@ -8,11 +8,11 @@ import domain.Researcher;
 
 public class Database {
 
-	private Map<int, Conference> conferences;
+	private Map<Integer, Conference> conferences;
 
-	private Map<int, Article> articles;
+	private Map<Integer, Article> articles;
 
-	private Map<int, Researcher> researchers;
+	private Map<Integer, Researcher> researchers;
 
 	public Database() {
 
@@ -62,7 +62,7 @@ public class Database {
 		return null;
 	}
 
-	public Researcher getResearcher(int ReseracherID) {
+	public Researcher getResearcher(int ResearcherID) {
 		return null;
 	}
 
