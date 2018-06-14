@@ -7,6 +7,8 @@ public class Conference {
 	private String initials;
 
 	private Researcher[] researcher;
+	
+	private List<Article> submittedArticles;
 
 	public Conference(String initials, List<Researcher> researchers, List<Article> submittedArticles) {
 
