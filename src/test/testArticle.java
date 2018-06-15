@@ -1,4 +1,4 @@
-package tests;
+package test;
 import  domain.*;
 import actions.*;
 import command.GradeAssignmentCommand;
