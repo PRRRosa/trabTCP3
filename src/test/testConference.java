@@ -65,7 +65,8 @@ public class testConference {
 		Researchers.add(Reviewer5);
 		Researchers.add(Reviewer6);
 		Researchers.add(AuthorTest);
-		ArticleTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,STAll);
+		Conference conferenceTest=new Conference("aaa",new ArrayList<Researcher>(),new ArrayList<Article>());
+		ArticleTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
 		GradeR3 = new Grade(3,Reviewer3);
 		ArticleTest2=ArticleTest;
 		ArticlesNoGrade = new ArrayList<Article>();

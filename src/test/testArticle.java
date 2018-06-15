@@ -19,7 +19,7 @@ public class testArticle {
 	Researcher Reviewer4;
 	Researcher Reviewer5;
 	Researcher Reviewer6;
-	Conference ConferenceTest;
+	Conference conferenceTest;
 	SearchTopics STAll;
 	List<Researcher> Researchers;
 	List<Article> Articles;
@@ -35,6 +35,7 @@ public class testArticle {
 	GradeAssignment GraAssig;
 	@Before
 	public void setUp() throws Exception{
+		
 		
 		AffiliationAll =new Affiliation(10,"UFRGS");
 		STAll = new SearchTopics(10,"Viagem No Tempo");
@@ -54,11 +55,12 @@ public class testArticle {
 		Researchers.add(Reviewer6);
 		Researchers.add(AuthorTest);
 		GradeR3 = new Grade(3,Reviewer3);
+		conferenceTest=new Conference("aaa",new ArrayList<Researcher>(),new ArrayList<Article>());
 	}
 	@Test
 	public void ConstructorArticle() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
 		}
 		catch(Exception e) {
 			assert false;
@@ -71,7 +73,7 @@ public class testArticle {
 	@Test
 	public void TestFiveResearchers() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer1);
 			ArtigoTest.setReviewers(Reviewer2);
 			ArtigoTest.setReviewers(Reviewer3);
@@ -89,7 +91,7 @@ public class testArticle {
 	@Test
 	public void TestTwoResearchers() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer1);
 			ArtigoTest.setReviewers(Reviewer2);
 		}
@@ -103,7 +105,7 @@ public class testArticle {
 	@Test
 	public void hasReceivedAllGrades() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer3);
 			ArtigoTest.saveGrade(GradeR3);
 		}
