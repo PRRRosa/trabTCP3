@@ -114,5 +114,27 @@ public class DatabaseTest {
 		assertTrue(data.getAllResearchers().isEmpty());
 	}
 	
+	@Test
+	public void testConferenceNotFound() {
+		assertTrue(null==data.getConference(0));
+	}
+	
+	@Test
+	public void testArticleNotFound() {
+		assertTrue(null==data.getArticle(0));
+	}
+
+	
+	@Test
+	public void testResearcherNotFound() {
+		assertTrue(null==data.getResearcher(0));
+	}
+	
+	@Test
+	public void testGetNotAllocatedConferences() {
+		Conference conf1=new Conference("mds",resList,articleList);
+		data.save(conf1);
+		assertTrue(conf1==data.getNotAllocatedConferences().get(0));
+	}
 
 }
