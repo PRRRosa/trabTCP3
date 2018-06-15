@@ -63,6 +63,5 @@ public class PeerReviewSystemTest {
 	    
 	    assertEquals(baos.toString(),printMessages);
 	
-	
-
+	}
 }
