@@ -17,6 +17,8 @@ public class Article {
 
 	private GradeAssignment gradeAssignment;
 	
+	private List<Researcher> reviewers;
+	
 	private Conference conference;
 
 	public Article(int id, String title, Researcher author, Conference conference, SearchTopics searchTopic) {
@@ -37,14 +39,15 @@ public class Article {
 	}
 
 	public List<Researcher> getReviewers() {
-		return null;
+		return this.reviewers;
 	}
 
 	public void setReviewers(Researcher reviewer) {
-
+		this.reviewers.add(reviewer);
 	}
 
 	public double calculateAverage() {
+		
 		return 0;
 	}
 

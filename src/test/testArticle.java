@@ -23,6 +23,7 @@ public class testArticle {
 	SearchTopics STAll;
 	List<Researcher> Researchers;
 	List<Article> Articles;
+	List<SearchTopics> stl;
 	Grade GradeLessThanMin;
 	Grade GradeGreaterThanMax;
 	Database DB;
@@ -40,13 +41,15 @@ public class testArticle {
 		AffiliationAll =new Affiliation(10,"UFRGS");
 		STAll = new SearchTopics(10,"Viagem No Tempo");
 		Researchers = new ArrayList<Researcher>();
-		AuthorTest = new Researcher(10,"Kurisu",AffiliationAll,STAll);
-		Reviewer1 = new Researcher(9,"Alexis",AffiliationAll,STAll);
-		Reviewer2 = new Researcher(8,"Arthur",AffiliationAll,STAll);
-		Reviewer3 = new Researcher(7,"Magnum",AffiliationAll,STAll);
-		Reviewer4 = new Researcher(6,"Mario",AffiliationAll,STAll);
-		Reviewer5 = new Researcher(5,"Okabe",AffiliationAll,STAll);
-		Reviewer6 = new Researcher(4,"Rintaro",AffiliationAll,STAll);
+		stl = new ArrayList();
+		stl.add(STAll);
+		AuthorTest = new Researcher(10,"Kurisu",AffiliationAll,stl);
+		Reviewer1 = new Researcher(9,"Alexis",AffiliationAll,stl);
+		Reviewer2 = new Researcher(8,"Arthur",AffiliationAll,stl);
+		Reviewer3 = new Researcher(7,"Magnum",AffiliationAll,stl);
+		Reviewer4 = new Researcher(6,"Mario",AffiliationAll,stl);
+		Reviewer5 = new Researcher(5,"Okabe",AffiliationAll,stl);
+		Reviewer6 = new Researcher(4,"Rintaro",AffiliationAll,stl);
 		Researchers.add(Reviewer1);
 		Researchers.add(Reviewer2);
 		Researchers.add(Reviewer3);
@@ -60,7 +63,7 @@ public class testArticle {
 	@Test
 	public void ConstructorArticle() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japï¿½o",AuthorTest,conferenceTest,STAll);
 		}
 		catch(Exception e) {
 			assert false;
@@ -73,7 +76,7 @@ public class testArticle {
 	@Test
 	public void TestFiveResearchers() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japï¿½o",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer1);
 			ArtigoTest.setReviewers(Reviewer2);
 			ArtigoTest.setReviewers(Reviewer3);
@@ -91,7 +94,7 @@ public class testArticle {
 	@Test
 	public void TestTwoResearchers() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japï¿½o",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer1);
 			ArtigoTest.setReviewers(Reviewer2);
 		}
@@ -105,7 +108,7 @@ public class testArticle {
 	@Test
 	public void hasReceivedAllGrades() {
 		try {
-			ArtigoTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
+			ArtigoTest = new Article(99,"Viagem no Tempo No Japï¿½o",AuthorTest,conferenceTest,STAll);
 			ArtigoTest.setReviewers(Reviewer3);
 			ArtigoTest.saveGrade(GradeR3);
 		}

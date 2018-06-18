@@ -11,7 +11,11 @@ public abstract class Command implements UIAction {
 	private UserTextInteraction userTextInteraction;
 
 	protected Command(SystemOperations systemOperation, UserTextInteraction userTextInteraction) {
-
+		this.systemOperationsImpl = (SystemOperationsImpl)systemOperation;
+		this.userTextInteraction = userTextInteraction;
+	}
+	protected Command(SystemOperations systemOperation) {
+		this.systemOperationsImpl = (SystemOperationsImpl)systemOperation;
 	}
 
 

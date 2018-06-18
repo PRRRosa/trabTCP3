@@ -5,7 +5,7 @@ import actions.SystemOperations;
 public class GradeAssignmentCommand extends Command {
 
 	public GradeAssignmentCommand(SystemOperations systemOperation) {
-
+		super(systemOperation);
 	}
 
 	public void execute() {

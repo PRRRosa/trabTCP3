@@ -7,7 +7,7 @@ import domain.Conference;
 public class AllocReviewersCommand extends Command {
 
 	public AllocReviewersCommand(SystemOperations systemOperation) {
-		
+		super(systemOperation);
 	}
 
 	public void execute() {

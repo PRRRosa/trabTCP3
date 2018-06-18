@@ -31,8 +31,10 @@ public class UserTextInteractionTest {
 	@Test
 	public void testPrintArticleList() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
-		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
+		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
 		List<Article> articleList= Arrays.asList(article);
 		String printMessage="ID:111 Nome:como fazer unit tests";
@@ -101,7 +103,9 @@ public class UserTextInteractionTest {
 	@Test
 	public void testPrintReviewers() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		List<Researcher> researcherList= Arrays.asList(res);
 		String printMessage="ID:122 Nome:Res";
 		
@@ -167,7 +171,9 @@ public class UserTextInteractionTest {
 	
 	@Test public void testPrintConferences() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
 		List<Researcher> resList = Arrays.asList(res);
 		List<Article> articleList= Arrays.asList(article);

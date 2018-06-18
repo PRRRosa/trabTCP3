@@ -7,6 +7,7 @@ import org.junit.Test;
 import data.Database;
 
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import domain.Conference;
@@ -21,6 +22,7 @@ public class DatabaseTest {
 	private Database data= new Database();
 	private Affiliation affiliation1;
 	private SearchTopics st;
+	List<SearchTopics> stl;
 	private Researcher res;
 	private List<Researcher> resList;
 	private Article article;
@@ -34,8 +36,10 @@ public class DatabaseTest {
 		data= new Database();
 		affiliation1= new Affiliation(123,"aa");
 		st=new SearchTopics(122,"st");
+		stl = new ArrayList();
+		stl.add(st);
 		researcherId=111;
-		res=new Researcher(researcherId,"Res",affiliation1,st);
+		res=new Researcher(researcherId,"Res",affiliation1,stl);
 		resList = Arrays.asList(res);
 		articleId=123;
 		article=new Article(articleId,"como fazer unit tests",res,null,st);

@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,7 +32,9 @@ public class AllocReviewersCommandTest {
 	@Before
 	public void setUp() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
 		List<Researcher> resList = Arrays.asList(res);
 		List<Article> articleList= Arrays.asList(article);
@@ -46,10 +49,10 @@ public class AllocReviewersCommandTest {
 	
 	@Test
 	public void testExecute() {
-		printMessages="Conferências:\n"
+		printMessages="Conferï¿½ncias:\n"
 				+ "(1)- mds\n"
-				+ "Digite o número de reviewers a serem usados\n"
-				+ "Digite o número da conferência escolhida\n";
+				+ "Digite o nï¿½mero de reviewers a serem usados\n"
+				+ "Digite o nï¿½mero da conferï¿½ncia escolhida\n";
 		System.setIn(new ByteArrayInputStream("1\n2\n".getBytes()));
 
 	    ByteArrayOutputStream baos = new ByteArrayOutputStream();

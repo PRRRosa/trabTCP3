@@ -33,6 +33,7 @@ public class testConference {
 	List<Researcher> Researchers;
 	List<Article> ArticlesGrade;
 	List<Article> ArticlesNoGrade;
+	List<SearchTopics> stl;
 	Grade GradeLessThanMin;
 	Grade GradeGreaterThanMax;
 	Database DB;
@@ -51,13 +52,15 @@ public class testConference {
 		AffiliationAll =new Affiliation(10,"UFRGS");
 		STAll = new SearchTopics(10,"Viagem No Tempo");
 		Researchers = new ArrayList<Researcher>();
-		AuthorTest = new Researcher(10,"Kurisu",AffiliationAll,STAll);
-		Reviewer1 = new Researcher(9,"Alexis",AffiliationAll,STAll);
-		Reviewer2 = new Researcher(8,"Arthur",AffiliationAll,STAll);
-		Reviewer3 = new Researcher(7,"Magnum",AffiliationAll,STAll);
-		Reviewer4 = new Researcher(6,"Mario",AffiliationAll,STAll);
-		Reviewer5 = new Researcher(5,"Okabe",AffiliationAll,STAll);
-		Reviewer6 = new Researcher(4,"Rintaro",AffiliationAll,STAll);
+		stl = new ArrayList();
+		stl.add(STAll);
+		AuthorTest = new Researcher(10,"Kurisu",AffiliationAll,stl);
+		Reviewer1 = new Researcher(9,"Alexis",AffiliationAll,stl);
+		Reviewer2 = new Researcher(8,"Arthur",AffiliationAll,stl);
+		Reviewer3 = new Researcher(7,"Magnum",AffiliationAll,stl);
+		Reviewer4 = new Researcher(6,"Mario",AffiliationAll,stl);
+		Reviewer5 = new Researcher(5,"Okabe",AffiliationAll,stl);
+		Reviewer6 = new Researcher(4,"Rintaro",AffiliationAll,stl);
 		Researchers.add(Reviewer1);
 		Researchers.add(Reviewer2);
 		Researchers.add(Reviewer3);
@@ -66,7 +69,7 @@ public class testConference {
 		Researchers.add(Reviewer6);
 		Researchers.add(AuthorTest);
 		Conference conferenceTest=new Conference("aaa",new ArrayList<Researcher>(),new ArrayList<Article>());
-		ArticleTest = new Article(99,"Viagem no Tempo No Japão",AuthorTest,conferenceTest,STAll);
+		ArticleTest = new Article(99,"Viagem no Tempo No Japï¿½o",AuthorTest,conferenceTest,STAll);
 		GradeR3 = new Grade(3,Reviewer3);
 		ArticleTest2=ArticleTest;
 		ArticlesNoGrade = new ArrayList<Article>();
@@ -75,7 +78,7 @@ public class testConference {
 		ArticlesGrade.add(ArticleTest);
 		ArticlesNoGrade.add(ArticleTest2);
 		ConfArticlesNoGrade = new Conference("Conferencia do tempo",Researchers,ArticlesNoGrade);
-		ConfArticlesGrade = new Conference("Conferencia do espaço",Researchers,ArticlesGrade);
+		ConfArticlesGrade = new Conference("Conferencia do espaï¿½o",Researchers,ArticlesGrade);
 	}
 	@Test
 	public void TestAllArticlesHaveGradesTrue() {

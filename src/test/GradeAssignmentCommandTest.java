@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,8 +30,10 @@ public class GradeAssignmentCommandTest {
 	@Before
 	public void setUp() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
-		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
+		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
 		article.setReviewers(res2);
 		List<Researcher> resList = Arrays.asList(res);
@@ -48,11 +51,11 @@ public class GradeAssignmentCommandTest {
 	public void testExecute() {
 		printMessages="Artigos:\n"
 				+ "(1)- como fazer unit tests\n"
-				+ "Digite o número do artigo a ser avaliado.\n"
-				+ "Revisores disponíveis:"
+				+ "Digite o nï¿½mero do artigo a ser avaliado.\n"
+				+ "Revisores disponï¿½veis:"
 				+ "(1)- Res2"
-				+ "Digite o número do revisor escolhido\n"
-				+ "Digite a nota a ser atribuída ao artigo.\n";
+				+ "Digite o nï¿½mero do revisor escolhido\n"
+				+ "Digite a nota a ser atribuï¿½da ao artigo.\n";
 		System.setIn(new ByteArrayInputStream("1\n3\n".getBytes()));
 
 	    ByteArrayOutputStream baos = new ByteArrayOutputStream();

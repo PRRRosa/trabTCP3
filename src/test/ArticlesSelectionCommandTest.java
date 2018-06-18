@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -33,7 +34,9 @@ public class ArticlesSelectionCommandTest {
 	@Before
 	public void setUp() {
 		SearchTopics st=new SearchTopics(122,"st");
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),st);
+		List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
 		List<Researcher> resList = Arrays.asList(res);
 		List<Article> articleList= Arrays.asList(article);
@@ -48,9 +51,9 @@ public class ArticlesSelectionCommandTest {
 	
 	@Test
 	public void testExecuteNoGrades() {
-		printMessages="Conferências:\n"
+		printMessages="Conferï¿½ncias:\n"
 				+ "(1)- mds\n"
-				+ "Digite o número da conferência escolhida\n"
+				+ "Digite o nï¿½mero da conferï¿½ncia escolhida\n"
 				+ "Alguns artigos ainda precisam ser avaliados.";
 		System.setIn(new ByteArrayInputStream("1\n".getBytes()));
 		//Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -79,9 +82,9 @@ public class ArticlesSelectionCommandTest {
 	@Test
 	public void testExecuteHighGrade() {
 		
-		printMessages="Conferências:\n"
+		printMessages="Conferï¿½ncias:\n"
 				+ "(1)- mds\n"
-				+ "Digite o número da conferência escolhida\n"
+				+ "Digite o nï¿½mero da conferï¿½ncia escolhida\n"
 				+ "Artigos aceitos:\ncomo fazer unit tests\n"
 				+ "Artigos rejeitados:";
 		System.setIn(new ByteArrayInputStream("1\n".getBytes()));
@@ -89,8 +92,10 @@ public class ArticlesSelectionCommandTest {
 	    PrintStream ps = new PrintStream(baos);
 	    PrintStream old = System.out;
 	    System.setOut(ps);
-	    
-	    Researcher res=new Researcher(123,"Res",new Affiliation(122,"aa"),new SearchTopics(132,"st"));
+	    SearchTopics st=new SearchTopics(132,"st");
+	    List<SearchTopics> stl = new ArrayList();
+		stl.add(st);
+	    Researcher res=new Researcher(123,"Res",new Affiliation(122,"aa"), stl);
 	    GradeAssignment gradeAssignment=new GradeAssignment(3,res);
 	    
 	    ascommand.execute();
