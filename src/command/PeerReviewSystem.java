@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.List;
 import static java.util.Arrays.asList;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import actions.SystemOperationsImpl;
 import data.Database;
@@ -12,7 +13,7 @@ import userinteraction.UserTextInteraction;
 
 public class PeerReviewSystem {
 	//Tem a finalidade de mostrar o menu para o usuário (?)
-	private Map<String,UIAction> commands;
+	private HashMap<String,UIAction> commands;
 
 	private SystemOperationsImpl systemOperations;
 
@@ -21,6 +22,7 @@ public class PeerReviewSystem {
 	public PeerReviewSystem() {
 		// Devemos aqui criar a base de dados e o systemOperations (acho que deve ser feito no main)
 		this.systemOperations = new SystemOperationsImpl(new Database());
+		this.commands = new HashMap<String, UIAction>();
 		this.addCommand("alocar", new AllocReviewersCommand(this.systemOperations));
 		this.addCommand("selecionar", new ArticlesSelectionCommand(this.systemOperations));
 		this.addCommand("avaliar", new GradeAssignmentCommand(this.systemOperations));
@@ -30,7 +32,7 @@ public class PeerReviewSystem {
 
 	public static void main(String[] args) {
 		PeerReviewSystem system = new PeerReviewSystem();
-		
+
 		system.createAndShowUI();
 	}
 
@@ -53,16 +55,16 @@ public class PeerReviewSystem {
 	}
 
 	public void createAndShowUI() {
-		getMenu();
+		System.out.println(getMenu());
 		String op = "";
-		List<String> commandList = new ArrayList<String>(commands.keySet());
+		ArrayList<String> commandList = new ArrayList<String>(commands.keySet());
 		commandList.add("sair");
 		
 		while(!commandList.contains(op)) {
 			op = userTextInteraction.readSelectedCommand();
 		}
 		
-		if(op != "sair") {
+		if(!op.equals("sair")) {
 			commands.get(op).execute();
 		}
 	}

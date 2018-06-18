@@ -4,6 +4,7 @@ import java.util.Map;
 import static java.util.Arrays.asList;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import domain.Conference;
 import domain.Grade;
@@ -12,13 +13,16 @@ import domain.Researcher;
 
 public class Database {
 
-	private Map<String, Conference> conferences;
+	private HashMap<String, Conference> conferences;
 
-	private Map<Integer, Article> articles;
+	private HashMap<Integer, Article> articles;
 
-	private Map<Integer, Researcher> researchers;
+	private HashMap<Integer, Researcher> researchers;
 
 	public Database() {
+		this.articles = new HashMap<Integer, Article>();
+		this.researchers = new HashMap<Integer, Researcher>();
+		this.conferences = new HashMap<String, Conference>();
 		this.initData();
 	}
 
@@ -141,7 +145,7 @@ public class Database {
 	}
 
 	public void save(Researcher researcher) {
-		this.researchers.put(researcher.getReasercherID(), researcher);
+		this.researchers.put(researcher.getResearcherID(), researcher);
 	}
 
 	public Conference getConference(String ConferenceInitials) {

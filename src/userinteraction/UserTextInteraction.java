@@ -50,6 +50,9 @@ public class UserTextInteraction {
 		op = scanner.nextLine();
 		
 		scanner.close();
+		op = op.replaceAll("\n", "");
+		op = op.replaceAll("\t", "");
+		op = op.trim();
 		return op;
 	}
 
