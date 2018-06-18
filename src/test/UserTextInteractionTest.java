@@ -16,7 +16,6 @@ import domain.Affiliation;
 import domain.Article;
 import domain.Conference;
 import domain.Researcher;
-import domain.SearchTopics;
 import userinteraction.UserTextInteraction;
 
 public class UserTextInteractionTest {
@@ -30,8 +29,8 @@ public class UserTextInteractionTest {
 	
 	@Test
 	public void testPrintArticleList() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),stl);
@@ -102,8 +101,8 @@ public class UserTextInteractionTest {
 	
 	@Test
 	public void testPrintReviewers() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		List<Researcher> researcherList= Arrays.asList(res);
@@ -170,8 +169,8 @@ public class UserTextInteractionTest {
 	}
 	
 	@Test public void testPrintConferences() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);

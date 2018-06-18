@@ -20,10 +20,10 @@ public class testArticle {
 	Researcher Reviewer5;
 	Researcher Reviewer6;
 	Conference conferenceTest;
-	SearchTopics STAll;
+	String STAll;
 	List<Researcher> Researchers;
 	List<Article> Articles;
-	List<SearchTopics> stl;
+	List<String> stl;
 	Grade GradeLessThanMin;
 	Grade GradeGreaterThanMax;
 	Database DB;
@@ -39,7 +39,7 @@ public class testArticle {
 		
 		
 		AffiliationAll =new Affiliation(10,"UFRGS");
-		STAll = new SearchTopics(10,"Viagem No Tempo");
+		STAll = "Viagem No Tempo";
 		Researchers = new ArrayList<Researcher>();
 		stl = new ArrayList();
 		stl.add(STAll);

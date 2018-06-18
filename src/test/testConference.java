@@ -13,10 +13,9 @@ import domain.Article;
 import domain.Conference;
 import domain.Grade;
 import domain.Researcher;
-import domain.SearchTopics;
+i
 import org.junit.*;
 import static org.junit.Assert.*;
-
 public class testConference {
 	Article ArticleTest;
 	Article ArticleTest2;
@@ -29,11 +28,11 @@ public class testConference {
 	Researcher Reviewer5;
 	Researcher Reviewer6;
 	Conference ConferenceTest;
-	SearchTopics STAll;
+	String STAll;
 	List<Researcher> Researchers;
 	List<Article> ArticlesGrade;
 	List<Article> ArticlesNoGrade;
-	List<SearchTopics> stl;
+	List<String> stl;
 	Grade GradeLessThanMin;
 	Grade GradeGreaterThanMax;
 	Database DB;
@@ -50,7 +49,7 @@ public class testConference {
 	public void setUp() throws Exception{
 		
 		AffiliationAll =new Affiliation(10,"UFRGS");
-		STAll = new SearchTopics(10,"Viagem No Tempo");
+		STAll = "Viagem No Tempo";
 		Researchers = new ArrayList<Researcher>();
 		stl = new ArrayList();
 		stl.add(STAll);
