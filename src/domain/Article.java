@@ -1,6 +1,8 @@
 package domain;
 
 import actions.GradeAssignment;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Article {
@@ -13,11 +15,11 @@ public class Article {
 
 	private String searchTopic;
 
-	private List<Grade> grades;
+	private ArrayList<Grade> grades;
 
 	private GradeAssignment gradeAssignment;
 	
-	private List<Researcher> reviewers;
+	private ArrayList<Researcher> reviewers;
 	
 	private String conferenceInitials;
 	
@@ -31,6 +33,7 @@ public class Article {
 		this.conferenceInitials = conference;
 		this.isAllocated = false;
 		
+		this.grades = new ArrayList<Grade>();
 	}
 
 	public double calculateAverage() {
