@@ -7,7 +7,7 @@ import domain.Article;
 public class ArticlesSelectionCommand extends Command {
 
 	public ArticlesSelectionCommand(SystemOperations systemOperation) {
-
+		super(systemOperation);
 	}
 
 	public void execute() {

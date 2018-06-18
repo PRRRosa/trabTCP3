@@ -16,17 +16,24 @@ public class Article {
 	private Grade[] grades;
 
 	private GradeAssignment gradeAssignment;
+	
+	private Conference conference;
 
 	public Article(int id, String title, Researcher author, Conference conference, SearchTopics searchTopic) {
-
+		this.id = id;
+		this.title = title;
+		this.author = author;
+		this.searchTopics = searchTopic;
+		this.conference = conference;
+		
 	}
 
 	public Conference getConference() {
-		return null;
+		return this.conference;
 	}
 
 	public SearchTopics getSearchTopic() {
-		return null;
+		return this.searchTopics;
 	}
 
 	public List<Researcher> getReviewers() {

@@ -6,20 +6,22 @@ public class Conference {
 
 	private String initials;
 
-	private Researcher[] researcher;
+	private List<Researcher> researcher;
 	
 	private List<Article> submittedArticles;
 
 	public Conference(String initials, List<Researcher> researchers, List<Article> submittedArticles) {
-
+		this.initials = initials;
+		this.researcher = researchers;
+		this.submittedArticles = submittedArticles;
 	}
 
 	public List<Researcher> getResearchers() {
-		return null;
+		return this.researcher;
 	}
 
 	public List<Article> getSubmittedArticles() {
-		return null;
+		return this.submittedArticles;
 	}
 
 	public boolean isConferenceAllocated() {

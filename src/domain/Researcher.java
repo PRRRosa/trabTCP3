@@ -10,32 +10,35 @@ public class Researcher {
 
 	private Affiliation affiliation;
 
-	private SearchTopics[] searchTopics;
+	private List<SearchTopics> searchTopics;
 
-	private Article article;
+	private List<Article> article;
 
-	public Researcher(int id, String name, Affiliation affiliation, SearchTopics searchTopics) {
-
+	public Researcher(int id, String name, Affiliation affiliation, List<SearchTopics> searchTopics) {
+		this.id = id;
+		this.name = name;
+		this.affiliation = affiliation;
+		this.searchTopics = searchTopics;
 	}
 
 	public int getReasercherID() {
-		return 0;
+		return this.id;
 	}
 
 	public List<SearchTopics> getSearchTopics() {
-		return null;
+		return this.searchTopics;
 	}
 
 	public Affiliation getAffiliation() {
-		return null;
+		return this.affiliation;
 	}
 
 	public List<Article> getReviewedArticles() {
-		return null;
+		return this.article;
 	}
 
 	public void setReviewedArticles(Article reviewedArticle) {
-
+		this.article.add(reviewedArticle);
 	}
 
 }

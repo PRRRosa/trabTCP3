@@ -7,15 +7,16 @@ public class SearchTopics {
 	private String name;
 
 	public SearchTopics(int id, String name) {
-
+		this.id = id;
+		this.name = name;
 	}
 
 	public String getSearchTopicsName() {
-		return null;
+		return this.name;
 	}
 
 	public int getSearchTopicsID() {
-		return 0;
+		return this.id;
 	}
 
 }

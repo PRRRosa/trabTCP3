@@ -7,15 +7,16 @@ public class Grade {
 	private Researcher reviewer;
 
 	public Grade(int value, Researcher reviewer) {
-
+		this.value = value;
+		this.reviewer = reviewer;
 	}
 
 	public int getValue() {
-		return 0;
+		return this.value;
 	}
 
 	public Researcher getReviewer() {
-		return null;
+		return this.reviewer;
 	}
 
 }
