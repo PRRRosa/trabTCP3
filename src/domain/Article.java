@@ -20,6 +20,8 @@ public class Article {
 	private List<Researcher> reviewers;
 	
 	private String conferenceInitials;
+	
+	private boolean isAllocated;
 
 	public Article(int id, String title, int author, String conference, String searchTopic) {
 		this.id = id;
@@ -27,6 +29,7 @@ public class Article {
 		this.authorId = author;
 		this.searchTopic = searchTopic;
 		this.conferenceInitials = conference;
+		this.isAllocated = false;
 		
 	}
 
@@ -84,5 +87,13 @@ public class Article {
 
 	public String getConferenceInitials() {
 		return conferenceInitials;
+	}
+	
+	public boolean isArticleAllocated() {
+		return this.isAllocated;
+	}
+	
+	public void setArticleAllocated(boolean allocation) {
+		this.isAllocated = allocation;
 	}
 }

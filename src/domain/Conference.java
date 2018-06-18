@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Conference {
@@ -24,12 +25,15 @@ public class Conference {
 		return this.submittedArticles;
 	}
 
-	public boolean isConferenceAllocated() {
-		return false;
-	}
 
 	public boolean allArticlesHaveGrades() {
-		return false;
+		for(Iterator<Article> articles = this.submittedArticles.iterator(); articles.hasNext();) {
+			Article listArticle = articles.next();
+			if(!(listArticle.getGrades().size() == listArticle.getReviewers().size())) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public String getInitials() {
