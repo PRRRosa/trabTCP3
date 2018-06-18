@@ -3,9 +3,6 @@ package data;
 import java.util.Map;
 import static java.util.Arrays.asList;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -126,8 +123,8 @@ public class Database {
 		this.researchers.put(researcher.getReasercherID(), researcher);
 	}
 
-	public Conference getConference(int ConferenceID) {
-		return conferences.get(ConferenceID);
+	public Conference getConference(String ConferenceInitials) {
+		return conferences.get(ConferenceInitials);
 	}
 
 	public Article getArticle(int ArticleID) {

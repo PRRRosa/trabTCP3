@@ -13,7 +13,7 @@ public class Article {
 
 	private String searchTopic;
 
-	private Grade[] grades;
+	private List<Grade> grades;
 
 	private GradeAssignment gradeAssignment;
 	
@@ -47,8 +47,15 @@ public class Article {
 	}
 
 	public double calculateAverage() {
+		double sum = 0;
+		int total = 0;
 		
-		return 0;
+		for(Grade i : grades) {
+			sum += i.getValue();
+			total++;
+		}
+		
+		return sum/total;
 	}
 
 	public boolean hasReceivedAllGrades() {
@@ -56,7 +63,7 @@ public class Article {
 	}
 
 	public void saveGrade(Grade grade) {
-
+		grades.add(grade);
 	}
 
 	public boolean checkArticleStatus() {
