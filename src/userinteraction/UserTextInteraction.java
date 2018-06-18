@@ -1,6 +1,9 @@
 package userinteraction;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 import domain.*;
 
 public class UserTextInteraction {
@@ -42,7 +45,12 @@ public class UserTextInteraction {
 	}
 
 	public String readSelectedCommand() {
-		return null;
+		Scanner scanner = new Scanner(System.in);
+		String op = "";
+		op = scanner.nextLine();
+		
+		scanner.close();
+		return op;
 	}
 
 }
