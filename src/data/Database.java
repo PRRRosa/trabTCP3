@@ -2,7 +2,6 @@ package data;
 
 import java.util.Map;
 import static java.util.Arrays.asList;
-
 import java.util.List;
 import java.util.ArrayList;
 
