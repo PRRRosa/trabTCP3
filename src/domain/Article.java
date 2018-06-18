@@ -30,22 +30,6 @@ public class Article {
 		
 	}
 
-	public String getConferenceInitials() {
-		return this.conferenceInitials;
-	}
-
-	public String getSearchTopic() {
-		return this.searchTopic;
-	}
-
-	public List<Researcher> getReviewers() {
-		return this.reviewers;
-	}
-
-	public void setReviewers(Researcher reviewer) {
-		this.reviewers.add(reviewer);
-	}
-
 	public double calculateAverage() {
 		double sum = 0;
 		int total = 0;
@@ -72,5 +56,33 @@ public class Article {
 
 	public int getId() {
 		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public String getSearchTopic() {
+		return searchTopic;
+	}
+
+	public List<Grade> getGrades() {
+		return grades;
+	}
+
+	public GradeAssignment getGradeAssignment() {
+		return gradeAssignment;
+	}
+
+	public List<Researcher> getReviewers() {
+		return reviewers;
+	}
+
+	public String getConferenceInitials() {
+		return conferenceInitials;
 	}
 }
