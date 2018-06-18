@@ -8,13 +8,13 @@ public class Researcher {
 
 	private String name;
 
-	private Affiliation affiliation;
+	private String affiliation;
 
-	private List<SearchTopics> searchTopics;
+	private List<String> searchTopics;
 
 	private List<Article> article;
 
-	public Researcher(int id, String name, Affiliation affiliation, List<SearchTopics> searchTopics) {
+	public Researcher(int id, String name, String affiliation, List<String> searchTopics) {
 		this.id = id;
 		this.name = name;
 		this.affiliation = affiliation;
@@ -25,11 +25,11 @@ public class Researcher {
 		return this.id;
 	}
 
-	public List<SearchTopics> getSearchTopics() {
+	public List<String> getSearchTopics() {
 		return this.searchTopics;
 	}
 
-	public Affiliation getAffiliation() {
+	public String getAffiliation() {
 		return this.affiliation;
 	}
 

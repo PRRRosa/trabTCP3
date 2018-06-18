@@ -9,9 +9,9 @@ public class Article {
 
 	private String title;
 
-	private Researcher author;
+	private int authorId;
 
-	private SearchTopics searchTopics;
+	private String searchTopic;
 
 	private Grade[] grades;
 
@@ -19,23 +19,23 @@ public class Article {
 	
 	private List<Researcher> reviewers;
 	
-	private Conference conference;
+	private String conferenceInitials;
 
-	public Article(int id, String title, Researcher author, Conference conference, SearchTopics searchTopic) {
+	public Article(int id, String title, int author, String conference, String searchTopic) {
 		this.id = id;
 		this.title = title;
-		this.author = author;
-		this.searchTopics = searchTopic;
-		this.conference = conference;
+		this.authorId = author;
+		this.searchTopic = searchTopic;
+		this.conferenceInitials = conference;
 		
 	}
 
-	public Conference getConference() {
-		return this.conference;
+	public String getConferenceInitials() {
+		return this.conferenceInitials;
 	}
 
-	public SearchTopics getSearchTopic() {
-		return this.searchTopics;
+	public String getSearchTopic() {
+		return this.searchTopic;
 	}
 
 	public List<Researcher> getReviewers() {
@@ -63,4 +63,7 @@ public class Article {
 		return false;
 	}
 
+	public int getId() {
+		return id;
+	}
 }

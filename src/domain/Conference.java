@@ -31,5 +31,8 @@ public class Conference {
 	public boolean allArticlesHaveGrades() {
 		return false;
 	}
-
+	
+	public String getInitials() {
+		return this.initials;
+	}
 }
