@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import domain.Conference;
+import domain.Grade;
 import domain.Article;
 import domain.Researcher;
 
@@ -49,6 +50,19 @@ public class Database {
 			save(new Article(10, "Architecture Comformance", 9, "ICSE", "Software Architecture"));
 			save(new Article(11, "Structural Testing", 10, "ICSE", "Software Testing"));
 	
+			//Seta as notas
+			articles.get(1).saveGrade(new Grade(2, researchers.get(8)));
+			articles.get(2).saveGrade(new Grade(2, researchers.get(7)));
+			articles.get(2).saveGrade(new Grade(3, researchers.get(2)));
+			articles.get(3).saveGrade(new Grade(-1, researchers.get(4)));
+			articles.get(3).saveGrade(new Grade(1, researchers.get(6)));
+			articles.get(4).saveGrade(new Grade(1, researchers.get(1)));
+			articles.get(4).saveGrade(new Grade(0, researchers.get(3)));
+			articles.get(5).saveGrade(new Grade(-3, researchers.get(4)));
+			articles.get(5).saveGrade(new Grade(-3, researchers.get(5)));
+			articles.get(6).saveGrade(new Grade(-1, researchers.get(3)));
+			articles.get(6).saveGrade(new Grade(0, researchers.get(6)));
+			
 			// Inicializa as conferências (Resulvi não remover a lista de artigos das conferencias)
 			save(new Conference("ICSE", asList(researchers.get(1), researchers.get(2), researchers.get(3), researchers.get(4), researchers.get(5), researchers.get(6), researchers.get(7)),
 								asList(articles.get(7), articles.get(8), articles.get(9), articles.get(10), articles.get(11))));
@@ -85,6 +99,19 @@ public class Database {
 		save(new Article(10, "Architecture Comformance", 9, "ICSE", "Software Architecture"));
 		save(new Article(11, "Structural Testing", 10, "ICSE", "Software Testing"));
 
+		//Seta as notas
+		articles.get(1).saveGrade(new Grade(2, researchers.get(8)));
+		articles.get(2).saveGrade(new Grade(2, researchers.get(7)));
+		articles.get(2).saveGrade(new Grade(3, researchers.get(2)));
+		articles.get(3).saveGrade(new Grade(-1, researchers.get(4)));
+		articles.get(3).saveGrade(new Grade(1, researchers.get(6)));
+		articles.get(4).saveGrade(new Grade(1, researchers.get(1)));
+		articles.get(4).saveGrade(new Grade(0, researchers.get(3)));
+		articles.get(5).saveGrade(new Grade(-3, researchers.get(4)));
+		articles.get(5).saveGrade(new Grade(-3, researchers.get(5)));
+		articles.get(6).saveGrade(new Grade(-1, researchers.get(3)));
+		articles.get(6).saveGrade(new Grade(0, researchers.get(6)));
+		
 		// Inicializa as conferências (Resulvi não remover a lista de artigos das conferencias)
 		save(new Conference("ICSE", asList(researchers.get(1), researchers.get(2), researchers.get(3), researchers.get(4), researchers.get(5), researchers.get(6), researchers.get(7)),
 							asList(articles.get(7), articles.get(8), articles.get(9), articles.get(10), articles.get(11))));
@@ -104,11 +131,6 @@ public class Database {
 
 	public List<Researcher> getAllResearchers() {
 		return new ArrayList<Researcher>(researchers.values());
-	}
-
-	public List<Conference> getNotAllocatedConferences() {
-		//Não sei o que é pra fazer isso
-		return null;
 	}
 
 	public void save(Conference conference) {

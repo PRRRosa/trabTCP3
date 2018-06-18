@@ -36,6 +36,7 @@ public class Article {
 	public double calculateAverage() {
 		double sum = 0;
 		int total = 0;
+
 		if(hasReceivedAllGrades()) {
 			for(Grade i : grades) {
 				sum += i.getValue();
