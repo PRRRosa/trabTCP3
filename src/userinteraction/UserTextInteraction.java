@@ -13,19 +13,29 @@ public class UserTextInteraction {
 	}
 
 	public void printArticleList(List<Article> articles) {
-
+		for(Article a : articles) {
+			System.out.println("Titulo: " + a.getTitle() + " ID Autor: " + a.getAuthorId() + " ID: " + a.getId() + " Topico: " + a.getSearchTopic() + " Conferencia: " + a.getConferenceInitials()); 
+		}
 	}
 
 	public void printReviewers(List<Researcher> reviewers) {
-
+		for(Researcher r : reviewers) {
+			System.out.println("ID: " + r.getResearcherID() + " Afiliacao: " + r.getAffiliation() + " Topicos: " + r.getSearchTopics());
+		}
 	}
 
 	public void printAllConferences(List<Conference> conferences) {
-
+		for(Conference c : conferences) {
+			System.out.println("Sigla: " + c.getInitials() + " Pesquisadores: " + c.getResearchers());
+			System.out.print("\tArtigos: ");
+			for(Article a : c.getSubmittedArticles()) {
+				System.out.print(a.getTitle() + " ");
+			}
+		}
 	}
 
-	public int readSelectedConfereceID() {
-		return 0;
+	public String readSelectedConfereceInitials(Scanner scan) {
+		return readSelectedCommand(scan);
 	}
 
 	public int readNumberReviewers() {
@@ -44,12 +54,9 @@ public class UserTextInteraction {
 		return 0;
 	}
 
-	public String readSelectedCommand() {
-		Scanner scanner = new Scanner(System.in);
-		String op = "";
-		op = scanner.nextLine();
+	public String readSelectedCommand(Scanner scan) {
+		String op = scan.next();
 		
-		scanner.close();
 		op = op.replaceAll("\n", "");
 		op = op.replaceAll("\t", "");
 		op = op.trim();
