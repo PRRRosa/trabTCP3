@@ -36,17 +36,23 @@ public class Article {
 	public double calculateAverage() {
 		double sum = 0;
 		int total = 0;
-		
-		for(Grade i : grades) {
-			sum += i.getValue();
-			total++;
+
+		if(hasReceivedAllGrades()) {
+			for(Grade i : grades) {
+				sum += i.getValue();
+				total++;
+			}
+			return sum/total;
 		}
+		return 0;
 		
-		return sum/total;
 	}
 
 	public boolean hasReceivedAllGrades() {
-		return false;
+		if(!(this.grades.size() == this.reviewers.size())) {
+			return false;
+		}
+		return true;
 	}
 
 	public void saveGrade(Grade grade) {
