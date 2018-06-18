@@ -43,7 +43,7 @@ public class Article {
 			}
 			return sum/total;
 		}
-		return 0;
+		return -1;
 		
 	}
 
@@ -59,7 +59,9 @@ public class Article {
 	}
 
 	public boolean checkArticleStatus() {
-		return false;
+		if(calculateAverage() >= 0 )
+			return true;
+		else return false;
 	}
 
 	public int getId() {

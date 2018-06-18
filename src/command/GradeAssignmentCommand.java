@@ -13,6 +13,9 @@ public class GradeAssignmentCommand extends Command {
 	}
 
 	private boolean validateGrade(int grade) {
+		if(grade>= -3 && grade <= 3) {
+			return true;
+		}
 		return false;
 	}
 
