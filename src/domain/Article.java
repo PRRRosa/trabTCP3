@@ -46,7 +46,10 @@ public class Article {
 	}
 
 	public boolean hasReceivedAllGrades() {
-		return false;
+		if(!(this.grades.size() == this.reviewers.size())) {
+			return false;
+		}
+		return true;
 	}
 
 	public void saveGrade(Grade grade) {
