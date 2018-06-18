@@ -38,8 +38,11 @@ public class Article {
 		int total = 0;
 		
 		for(Grade i : grades) {
-			sum += i.getValue();
-			total++;
+			//Checa se a nota é null
+			if(i.getValue() != null) {
+				sum += i.getValue();
+				total++;
+			}
 		}
 		
 		return sum/total;
