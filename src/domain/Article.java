@@ -36,16 +36,15 @@ public class Article {
 	public double calculateAverage() {
 		double sum = 0;
 		int total = 0;
-		
-		for(Grade i : grades) {
-			//Checa se a nota é null
-			if(i.getValue() != null) {
+		if(hasReceivedAllGrades()) {
+			for(Grade i : grades) {
 				sum += i.getValue();
 				total++;
 			}
+			return sum/total;
 		}
+		return 0;
 		
-		return sum/total;
 	}
 
 	public boolean hasReceivedAllGrades() {
