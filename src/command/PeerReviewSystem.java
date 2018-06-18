@@ -21,7 +21,7 @@ public class PeerReviewSystem {
 		this.systemOperations = new SystemOperationsImpl(new Database());
 	}
 
-	public void main() {
+	public static void main() {
 		
 	}
 
