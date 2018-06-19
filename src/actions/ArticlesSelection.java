@@ -7,8 +7,10 @@ import domain.Article;
 
 public class ArticlesSelection {
 
+	//Ordenar descrescente de nota
 	private List<Article> acceptedArticles;
 
+	//Ordenar crescente
 	private List<Article> rejectedArticles;
 
 	public ArticlesSelection(Conference conference) {
@@ -19,7 +21,7 @@ public class ArticlesSelection {
 
 	private void generateArticleLists(List<Article> submittedArticles) {
 		for(int i=0;i<submittedArticles.size();i++) {
-			if(submittedArticles.get(i).calculateAverage()>0) {
+			if(submittedArticles.get(i).calculateAverage() >= 0) {
 				acceptedArticles.add(submittedArticles.get(i));
 			} else rejectedArticles.add(submittedArticles.get(i));
 		}
