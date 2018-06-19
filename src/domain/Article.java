@@ -107,4 +107,8 @@ public class Article {
 	public void setArticleAllocated(boolean allocation) {
 		this.isAllocated = allocation;
 	}
+	
+	public void setReviewers(Researcher researcher) {
+		this.reviewers.add(researcher);
+	}
 }

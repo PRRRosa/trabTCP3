@@ -36,7 +36,7 @@ public class AllocReviewers {
 				}
 			}	
 		}
-		if(researcher.getReasercherID() == article.getAuthorId()) {
+		if(researcher.getResearcherID() == article.getAuthorId()) {
 			return false;
 		}
 		return true;
