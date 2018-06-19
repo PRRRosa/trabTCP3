@@ -24,6 +24,8 @@ import domain.Affiliation;
 import domain.Article;
 import domain.Conference;
 import domain.Researcher;
+import userinteraction.UserTextInteraction;
+
 import java.util.Arrays;
 public class ArticlesSelectionCommandTest {
 	
@@ -95,7 +97,8 @@ public class ArticlesSelectionCommandTest {
 	    List<String> stl = new ArrayList();
 		stl.add(st);
 	    Researcher res=new Researcher(123,"Res","aa",stl);
-	    GradeAssignment gradeAssignment=new GradeAssignment(3,res);
+		Article article=new Article(111,"como fazer unit tests",res.getResearcherID(),null,st);
+	    GradeAssignment gradeAssignment=new GradeAssignment(3,res, article);
 	    
 	    ascommand.execute();
 	    System.out.flush();
