@@ -13,7 +13,6 @@ import domain.Article;
 import domain.Conference;
 import domain.Grade;
 import domain.Researcher;
-i
 import org.junit.*;
 import static org.junit.Assert.*;
 public class testConference {
@@ -53,13 +52,13 @@ public class testConference {
 		Researchers = new ArrayList<Researcher>();
 		stl = new ArrayList();
 		stl.add(STAll);
-		AuthorTest = new Researcher(10,"Kurisu",AffiliationAll,stl);
-		Reviewer1 = new Researcher(9,"Alexis",AffiliationAll,stl);
-		Reviewer2 = new Researcher(8,"Arthur",AffiliationAll,stl);
-		Reviewer3 = new Researcher(7,"Magnum",AffiliationAll,stl);
-		Reviewer4 = new Researcher(6,"Mario",AffiliationAll,stl);
-		Reviewer5 = new Researcher(5,"Okabe",AffiliationAll,stl);
-		Reviewer6 = new Researcher(4,"Rintaro",AffiliationAll,stl);
+		AuthorTest = new Researcher(10,"Kurisu","UFRGS",stl);
+		Reviewer1 = new Researcher(9,"Alexis","UFRGS",stl);
+		Reviewer2 = new Researcher(8,"Arthur","UFRGS",stl);
+		Reviewer3 = new Researcher(7,"Magnum","UFRGS",stl);
+		Reviewer4 = new Researcher(6,"Mario","UFRGS",stl);
+		Reviewer5 = new Researcher(5,"Okabe","UFRGS",stl);
+		Reviewer6 = new Researcher(4,"Rintaro","UFRGS",stl);
 		Researchers.add(Reviewer1);
 		Researchers.add(Reviewer2);
 		Researchers.add(Reviewer3);
@@ -68,7 +67,7 @@ public class testConference {
 		Researchers.add(Reviewer6);
 		Researchers.add(AuthorTest);
 		Conference conferenceTest=new Conference("aaa",new ArrayList<Researcher>(),new ArrayList<Article>());
-		ArticleTest = new Article(99,"Viagem no Tempo No Jap�o",AuthorTest,conferenceTest,STAll);
+		ArticleTest = new Article(99,"Viagem no Tempo No Jap�o",AuthorTest.getResearcherID(),conferenceTest.getInitials(),STAll);
 		GradeR3 = new Grade(3,Reviewer3);
 		ArticleTest2=ArticleTest;
 		ArticlesNoGrade = new ArrayList<Article>();

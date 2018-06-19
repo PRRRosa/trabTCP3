@@ -34,8 +34,8 @@ public class AllocReviewersCommandTest {
 		String st="st";
 		List<String> stl = new ArrayList();
 		stl.add(st);
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
-		Article article=new Article(111,"como fazer unit tests",res,null,st);
+		Researcher res=new Researcher(123,"Res","aa",stl);
+		Article article=new Article(111,"como fazer unit tests",res.getResearcherID(),null,st);
 		List<Researcher> resList = Arrays.asList(res);
 		List<Article> articleList= Arrays.asList(article);
 		Conference conf1=new Conference("mds",resList,articleList);

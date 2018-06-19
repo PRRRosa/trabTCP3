@@ -26,6 +26,7 @@ public class ArticlesSelection {
 	}
 
 	public List<Article> getAcceptedArticles() {
+
 		return acceptedArticles;
 	}
 

@@ -32,9 +32,9 @@ public class UserTextInteractionTest {
 		String st="st";
 		List<String> stl = new ArrayList();
 		stl.add(st);
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
-		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),stl);
-		Article article=new Article(111,"como fazer unit tests",res,null,st);
+		Researcher res=new Researcher(123,"Res","aa",stl);
+		Researcher res2=new Researcher(124,"Res2","ab",stl);
+		Article article=new Article(111,"como fazer unit tests",res.getResearcherID(),null,st);
 		List<Article> articleList= Arrays.asList(article);
 		String printMessage="ID:111 Nome:como fazer unit tests";
 		
@@ -104,7 +104,7 @@ public class UserTextInteractionTest {
 		String st="st";
 		List<String> stl = new ArrayList();
 		stl.add(st);
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
+		Researcher res=new Researcher(123,"Res","aa",stl);
 		List<Researcher> researcherList= Arrays.asList(res);
 		String printMessage="ID:122 Nome:Res";
 		
@@ -172,8 +172,8 @@ public class UserTextInteractionTest {
 		String st="st";
 		List<String> stl = new ArrayList();
 		stl.add(st);
-		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
-		Article article=new Article(111,"como fazer unit tests",res,null,st);
+		Researcher res=new Researcher(123,"Res","aa",stl);
+		Article article=new Article(111,"como fazer unit tests",res.getResearcherID(),null,st);
 		List<Researcher> resList = Arrays.asList(res);
 		List<Article> articleList= Arrays.asList(article);
 		Conference conf1=new Conference("mds",resList,articleList);

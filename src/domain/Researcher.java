@@ -40,5 +40,5 @@ public class Researcher {
 	public void setReviewedArticles(Article reviewedArticle) {
 		this.article.add(reviewedArticle);
 	}
-
+	
 }
