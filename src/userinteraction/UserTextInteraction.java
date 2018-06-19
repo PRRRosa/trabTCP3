@@ -1,6 +1,5 @@
 package userinteraction;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,35 +25,19 @@ public class UserTextInteraction {
 
 	public void printAllConferences(List<Conference> conferences) {
 		for(Conference c : conferences) {
-			System.out.println("Sigla: " + c.getInitials() + " Pesquisadores: " + c.getResearchers());
 			System.out.print("\tArtigos: ");
 			for(Article a : c.getSubmittedArticles()) {
 				System.out.print(a.getTitle() + " ");
+				System.out.println("Sigla: " + c.getInitials() + " Pesquisadores: " + c.getResearchers());
 			}
 		}
 	}
 
-	public String readSelectedConfereceInitials(Scanner scan) {
-		return readSelectedCommand(scan);
+	public int readInt(Scanner scan) {
+		return scan.nextInt();
 	}
 
-	public int readNumberReviewers() {
-		return 0;
-	}
-
-	public int readSelectedArticleID() {
-		return 0;
-	}
-
-	public int readSelectedReviewerID() {
-		return 0;
-	}
-
-	public int readGrade() {
-		return 0;
-	}
-
-	public String readSelectedCommand(Scanner scan) {
+	public String readStr(Scanner scan) {
 		String op = scan.next();
 		
 		op = op.replaceAll("\n", "");

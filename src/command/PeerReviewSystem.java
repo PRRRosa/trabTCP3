@@ -62,7 +62,7 @@ public class PeerReviewSystem {
 		commandList.add("sair");
 		
 		while(!commandList.contains(op)) {
-			op = userTextInteraction.readSelectedCommand(scanner);
+			op = userTextInteraction.readStr(scanner);
 		}
 
 		scanner.close();
