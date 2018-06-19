@@ -22,7 +22,7 @@ import domain.Affiliation;
 import domain.Article;
 import domain.Conference;
 import domain.Researcher;
-import domain.SearchTopics;
+
 
 public class AllocReviewersCommandTest {
 
@@ -31,8 +31,8 @@ public class AllocReviewersCommandTest {
 
 	@Before
 	public void setUp() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);

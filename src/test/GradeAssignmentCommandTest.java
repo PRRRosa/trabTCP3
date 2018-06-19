@@ -20,7 +20,6 @@ import domain.Affiliation;
 import domain.Article;
 import domain.Conference;
 import domain.Researcher;
-import domain.SearchTopics;
 
 public class GradeAssignmentCommandTest {
 
@@ -29,8 +28,8 @@ public class GradeAssignmentCommandTest {
 
 	@Before
 	public void setUp() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Researcher res2=new Researcher(124,"Res2",new Affiliation(121,"ab"),stl);

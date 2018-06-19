@@ -21,7 +21,7 @@ public class Researcher {
 		this.searchTopics = searchTopics;
 	}
 
-	public int getReasercherID() {
+	public int getResearcherID() {
 		return this.id;
 	}
 

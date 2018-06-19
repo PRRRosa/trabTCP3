@@ -24,7 +24,6 @@ import domain.Affiliation;
 import domain.Article;
 import domain.Conference;
 import domain.Researcher;
-import domain.SearchTopics;
 import java.util.Arrays;
 public class ArticlesSelectionCommandTest {
 	
@@ -33,8 +32,8 @@ public class ArticlesSelectionCommandTest {
 
 	@Before
 	public void setUp() {
-		SearchTopics st=new SearchTopics(122,"st");
-		List<SearchTopics> stl = new ArrayList();
+		String st="st";
+		List<String> stl = new ArrayList();
 		stl.add(st);
 		Researcher res=new Researcher(123,"Res",new Affiliation(123,"aa"),stl);
 		Article article=new Article(111,"como fazer unit tests",res,null,st);
@@ -92,8 +91,8 @@ public class ArticlesSelectionCommandTest {
 	    PrintStream ps = new PrintStream(baos);
 	    PrintStream old = System.out;
 	    System.setOut(ps);
-	    SearchTopics st=new SearchTopics(132,"st");
-	    List<SearchTopics> stl = new ArrayList();
+	    String st="st";
+	    List<String> stl = new ArrayList();
 		stl.add(st);
 	    Researcher res=new Researcher(123,"Res",new Affiliation(122,"aa"), stl);
 	    GradeAssignment gradeAssignment=new GradeAssignment(3,res);

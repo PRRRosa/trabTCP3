@@ -14,15 +14,15 @@ import domain.Conference;
 import domain.Affiliation;
 import domain.Article;
 import domain.Researcher;
-import domain.SearchTopics;
+
 
 
 
 public class DatabaseTest {
 	private Database data= new Database();
 	private Affiliation affiliation1;
-	private SearchTopics st;
-	List<SearchTopics> stl;
+	private String st;
+	List<String> stl;
 	private Researcher res;
 	private List<Researcher> resList;
 	private Article article;
@@ -35,7 +35,7 @@ public class DatabaseTest {
 		
 		data= new Database();
 		affiliation1= new Affiliation(123,"aa");
-		st=new SearchTopics(122,"st");
+		st="st";
 		stl = new ArrayList();
 		stl.add(st);
 		researcherId=111;
