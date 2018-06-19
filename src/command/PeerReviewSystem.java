@@ -53,18 +53,20 @@ public class PeerReviewSystem {
 	}
 
 	public void createAndShowUI() {
-		System.out.println(getMenu());
 		Scanner scanner = new Scanner(System.in);
 		String op = "";
 		ArrayList<String> commandList = new ArrayList<String>(commands.keySet());
 		commandList.add("sair");
-		
-		while(!commandList.contains(op)) {
-			op = userTextInteraction.readStr(scanner);
-		}
+		while(!op.equals("sair")) {
+			System.out.println(getMenu());
+			op = "";
+			while(!commandList.contains(op)) {
+				op = userTextInteraction.readStr(scanner);
+			}
 
-		if(!op.equals("sair")) {
-			commands.get(op).execute();
+			if(!op.equals("sair")) {
+				commands.get(op).execute();
+			}
 		}
 		scanner.close();
 	}

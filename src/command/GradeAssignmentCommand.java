@@ -33,8 +33,6 @@ public class GradeAssignmentCommand extends Command {
 			grade = getUserTextInteraction().readInt(scan);
 		}
 		new GradeAssignment(grade, reviewer, gradedArticle);
-		scan.close();
-		//System.out.println(getSystemOperationsImpl().getDatabase().getArticle(idArticle).calculateAverage());
 	}
 
 	private boolean validateGrade(int grade) {
