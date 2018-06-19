@@ -7,8 +7,10 @@ import domain.Article;
 
 public class ArticlesSelection {
 
+	//Ordenar descrescente de nota
 	private List<Article> acceptedArticles;
 
+	//Ordenar crescente
 	private List<Article> rejectedArticles;
 
 	public ArticlesSelection(Conference conference) {

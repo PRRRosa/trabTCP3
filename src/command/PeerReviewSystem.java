@@ -23,10 +23,10 @@ public class PeerReviewSystem {
 		// Devemos aqui criar a base de dados e o systemOperations (acho que deve ser feito no main)
 		this.systemOperations = new SystemOperationsImpl(new Database());
 		this.commands = new HashMap<String, UIAction>();
+		this.userTextInteraction = new UserTextInteraction();
 		this.addCommand("alocar", new AllocReviewersCommand(this.systemOperations));
 		this.addCommand("selecionar", new ArticlesSelectionCommand(this.systemOperations));
-		this.addCommand("avaliar", new GradeAssignmentCommand(this.systemOperations));
-		this.userTextInteraction = new UserTextInteraction();
+		this.addCommand("avaliar", new GradeAssignmentCommand(this.systemOperations, this.userTextInteraction));
 	}
 
 
