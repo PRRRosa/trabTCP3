@@ -15,6 +15,7 @@ import command.Command;
 import command.GradeAssignmentCommand;
 import command.PeerReviewSystem;
 import data.Database;
+import userinteraction.UserTextInteraction;
 
 public class PeerReviewSystemTest {
 	private PeerReviewSystem peerReviewSystem;
@@ -27,7 +28,8 @@ public class PeerReviewSystemTest {
 	public void testAddCommand() {
 		Database data=new Database();
 		SystemOperations sysOp=new SystemOperationsImpl(data);
-		Command command=new GradeAssignmentCommand(sysOp);
+		UserTextInteraction uti = new UserTextInteraction();
+		Command command=new GradeAssignmentCommand(sysOp, uti);
 		peerReviewSystem.addCommand("teste", command);
 	}
 	
@@ -35,7 +37,8 @@ public class PeerReviewSystemTest {
 	public void testShowMenu() {
 		Database data=new Database();
 		SystemOperations sysOp=new SystemOperationsImpl(data);
-		Command command=new GradeAssignmentCommand(sysOp);
+		UserTextInteraction uti = new UserTextInteraction();
+		Command command=new GradeAssignmentCommand(sysOp, uti);
 		peerReviewSystem.addCommand("teste", command);
 		
 		String expectedOutString="(1)- teste\n";

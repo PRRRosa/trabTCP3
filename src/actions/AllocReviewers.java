@@ -1,6 +1,7 @@
 package actions;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import domain.Conference;
 import domain.Researcher;
@@ -53,9 +54,9 @@ public class AllocReviewers {
 	}
 
 	private void sortCandidates(List<Researcher> selectedCandidates) {
-		List<Researcher> sortedList = new ArrayList();
-		
-		selectedCandidates = sortedList;
+		for(Researcher r : selectedCandidates) {
+			
+		}
 	}
 
 	private void assignArticle(Researcher selectedCandidate, Article submittedArticle) {

@@ -13,12 +13,15 @@ public class Researcher {
 	private List<String> searchTopics;
 
 	private List<Article> article;
+	
+	private int numberOfArticles;
 
 	public Researcher(int id, String name, String affiliation, List<String> searchTopics) {
 		this.id = id;
 		this.name = name;
 		this.affiliation = affiliation;
 		this.searchTopics = searchTopics;
+		this.numberOfArticles = 0;
 	}
 
 	public int getResearcherID() {
@@ -39,6 +42,10 @@ public class Researcher {
 
 	public void setReviewedArticles(Article reviewedArticle) {
 		this.article.add(reviewedArticle);
+		this.numberOfArticles++;
+	}
+	public int getNumberOfArticles() {
+		return this.numberOfArticles;
 	}
 	
 }
