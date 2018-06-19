@@ -2,7 +2,6 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -27,7 +26,7 @@ public class PeerReviewSystemTest {
 	public void testAddCommand() {
 		Database data=new Database();
 		SystemOperations sysOp=new SystemOperationsImpl(data);
-		Command command=new GradeAssignmentCommand(sysOp);
+		Command command=new GradeAssignmentCommand(sysOp, null);
 		peerReviewSystem.addCommand("teste", command);
 	}
 	
@@ -35,7 +34,7 @@ public class PeerReviewSystemTest {
 	public void testShowMenu() {
 		Database data=new Database();
 		SystemOperations sysOp=new SystemOperationsImpl(data);
-		Command command=new GradeAssignmentCommand(sysOp);
+		Command command=new GradeAssignmentCommand(sysOp, null);
 		peerReviewSystem.addCommand("teste", command);
 		
 		String expectedOutString="(1)- teste\n";

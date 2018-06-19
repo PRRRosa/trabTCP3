@@ -1,9 +1,7 @@
 package command;
 
 import java.util.Scanner;
-import java.util.Map;
 import java.util.List;
-import static java.util.Arrays.asList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -65,10 +63,10 @@ public class PeerReviewSystem {
 			op = userTextInteraction.readStr(scanner);
 		}
 
-		scanner.close();
 		if(!op.equals("sair")) {
 			commands.get(op).execute();
 		}
+		scanner.close();
 	}
 
 }
