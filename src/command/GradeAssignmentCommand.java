@@ -15,6 +15,7 @@ public class GradeAssignmentCommand extends Command {
 		getUserTextInteraction().printArticleList(getSystemOperationsImpl().getDatabase().getAllArticles());
 		Scanner scan = new Scanner(System.in);
 		int id = getUserTextInteraction().readInt(scan);
+		getSystemOperationsImpl().getDatabase().getArticle(id).getReviewers();
 	}
 
 	private boolean validateGrade(int grade) {
