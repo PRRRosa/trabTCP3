@@ -15,7 +15,7 @@ public class SystemOperationsImpl implements SystemOperations{
 	private PeerReviewSystem peerReviewSystem;
 
 	public SystemOperationsImpl(Database database) {
-
+		this.database = database;
 	}
 
 	public AllocReviewers allocReviewers(Conference selectedConference, int numReviewers) {
@@ -31,7 +31,7 @@ public class SystemOperationsImpl implements SystemOperations{
 	}
 
 	public Database getDatabase() {
-		return null;
+		return this.database;
 	}
 
 }

@@ -32,7 +32,7 @@ public class PeerReviewSystem {
 
 	public static void main(String[] args) {
 		PeerReviewSystem system = new PeerReviewSystem();
-
+		
 		system.createAndShowUI();
 	}
 

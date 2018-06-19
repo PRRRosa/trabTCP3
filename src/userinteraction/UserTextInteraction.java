@@ -25,11 +25,26 @@ public class UserTextInteraction {
 
 	public void printAllConferences(List<Conference> conferences) {
 		for(Conference c : conferences) {
-			System.out.print("\tArtigos: ");
-			for(Article a : c.getSubmittedArticles()) {
-				System.out.print(a.getTitle() + " ");
-				System.out.println("Sigla: " + c.getInitials() + " Pesquisadores: " + c.getResearchers());
+			System.out.print("Sigla: " + c.getInitials() + " Pesquisadores: ");
+			for(Researcher r : c.getResearchers()) {
+				if(r != c.getResearchers().get(c.getResearchers().size()-1)) {
+					System.out.print(r.getResearcherID() + ", ");	
+				}
+				else {
+					System.out.print(r.getResearcherID());
+				}
 			}
+			System.out.print("\tArtigos: ");
+			Article last = c.getSubmittedArticles().get(c.getSubmittedArticles().size() - 1);
+			for(Article a : c.getSubmittedArticles()) {
+				if(a != last) {
+					System.out.print(a.getTitle() + ", ");	
+				}
+				else {
+					System.out.print(a.getTitle());
+				}
+			}
+			System.out.println("");
 		}
 	}
 
