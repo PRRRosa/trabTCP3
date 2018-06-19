@@ -19,11 +19,11 @@ public class ArticlesSelection {
 	}
 
 	public List<Article> getAcceptedArticles() {
-		return null;
+		return this.acceptedArticles;
 	}
 
 	public List<Article> getRejectedArticles() {
-		return null;
+		return this.rejectedArticles;
 	}
 
 }

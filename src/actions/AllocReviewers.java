@@ -1,5 +1,6 @@
 package actions;
 
+import java.util.ArrayList;
 import java.util.List;
 import domain.Conference;
 import domain.Researcher;
@@ -14,23 +15,47 @@ public class AllocReviewers {
 	private int numReviewers;
 
 	public AllocReviewers(Conference selectedConference, int numReviewers) {
-
+		this.selectedConference = selectedConference;
+		this.numReviewers = numReviewers;
 	}
 
 	private void setAllocationGroup(List<Article> submittedArticles) {
-
+		this.allocationGroup = submittedArticles;
 	}
 
-	private boolean validateCandidate(Researcher researcher) {
-		return false;
+	private boolean validateCandidate(Researcher researcher, Article article) {
+		List<Researcher> researchers = article.getReviewers();
+		for (Researcher r : researchers) {
+			if (r.getAffiliation().equals(researcher.getAffiliation())) {
+				return false;
+			}
+			List<String> topics = r.getSearchTopics();
+			for(String s : topics) {
+				if(researcher.getSearchTopics().stream().anyMatch(str -> str.trim().equals(s))) {
+					return false;
+				}
+			}	
+		}
+		if(researcher.getReasercherID() == article.getAuthorId()) {
+			return false;
+		}
+		return true;
 	}
 
-	private List<Researcher> selectCandidates(List<Researcher> researchers) {
-		return null;
+	private List<Researcher> selectCandidates(List<Researcher> researchers, Article article) {
+		List<Researcher> selectedList = new ArrayList();
+		for (Researcher r : researchers) {
+			if (validateCandidate(r,article)) {
+				selectedList.add(r);
+			}
+		}
+		return selectedList;
 	}
 
 	private void sortCandidates(List<Researcher> selectedCandidates) {
-
+		List<Researcher> sortedList = new ArrayList();
+		
+		selectedCandidates = sortedList;
 	}
 
 	private void assignArticle(Researcher selectedCandidate, Article submittedArticle) {
