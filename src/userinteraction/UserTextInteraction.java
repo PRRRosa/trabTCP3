@@ -6,7 +6,7 @@ import java.util.Scanner;
 import domain.*;
 
 public class UserTextInteraction {
-
+	
 	public UserTextInteraction() {
 
 	}

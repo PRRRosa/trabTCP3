@@ -34,6 +34,7 @@ public class Article {
 		this.isAllocated = false;
 		
 		this.grades = new ArrayList<Grade>();
+		this.reviewers = new ArrayList<Researcher>();
 	}
 
 	public double calculateAverage() {
@@ -60,6 +61,7 @@ public class Article {
 
 	public void saveGrade(Grade grade) {
 		grades.add(grade);
+		this.reviewers.add(grade.getReviewer());
 	}
 
 	public boolean checkArticleStatus() {

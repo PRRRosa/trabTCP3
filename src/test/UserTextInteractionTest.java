@@ -243,9 +243,9 @@ public class UserTextInteractionTest {
 	/*
 	@Test 
 	public void testReadSelectedConfereceID() {
-		int inputID=1;
+		String inputID="1";
 	    System.setIn(new ByteArrayInputStream("1\n".getBytes()));
-	    int outputID=userTextInteraction.readSelectedConfereceID();
+	    String outputID=userTextInteraction.readStr(scan);
 	    assertEquals(inputID,outputID);
 		
 	}

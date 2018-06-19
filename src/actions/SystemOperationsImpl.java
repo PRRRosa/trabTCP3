@@ -22,10 +22,6 @@ public class SystemOperationsImpl implements SystemOperations{
 		return null;
 	}
 
-	public GradeAssignment gradeAssignment(int value, Researcher reviewer) {
-		return null;
-	}
-
 	public ArticlesSelection articlesSelection(Conference conference) {
 		return null;
 	}

@@ -97,7 +97,7 @@ public class Database {
 		save(new Article(5, "Architecture Recovery", 9, "FSE", "Software Architecture"));
 		save(new Article(6, "Funcional Testing", 10, "FSE", "Software Testing"));
 		save(new Article(7, "COTs", 6, "ICSE", "Software Reuse"));
-		save(new Article(8, "Pointcut ", 7, "ICSE", "Aspect-oriented Programming"));
+		save(new Article(8, "Pointcut", 7, "ICSE", "Aspect-oriented Programming"));
 		save(new Article(9, "Product Derivation", 8, "ICSE", "Software Product Lines"));
 		save(new Article(10, "Architecture Comformance", 9, "ICSE", "Software Architecture"));
 		save(new Article(11, "Structural Testing", 10, "ICSE", "Software Testing"));
